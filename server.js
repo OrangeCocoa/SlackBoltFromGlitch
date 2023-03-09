@@ -1,7 +1,7 @@
 import cmd from 'node-cmd';
 import express from 'express'; 
 import bodyParser from 'body-parser';
-import crypto from 'crypto-js';
+import crypto from 'crypto';
 
 const app = express();
 app.use(express.static('public'));
@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 // github へのプッシュを検知した場合、 git.sh を実行する。
 const onWebhook = (req, res) => {
-  let hmac = crypto.SHA1(process.env.GIT_SECRET);
+  let hmac = crypto.createHash('sha1', process.env.GIT_SECRET);
   let sig  = `sha1=${hmac.update(JSON.stringify(req.body)).digest('hex')}`;
   console.log(sig);
   console.log(req.headers['x-hub-signature']);

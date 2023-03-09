@@ -3,10 +3,10 @@
   "version": "1.1.0",
   "private": true,
   "description": "A basic example of using the Slack Bolt ⚡️ SDK",
-  "main": "server.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node src/index.js"
   },
   "engines": {
     "node": "14.x"

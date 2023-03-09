@@ -4,10 +4,10 @@ import { app } from './define/boltApp.js';
 // ここでコマンドの有効化を切り替える
 import * as mainEvent from './events/mainEvent.js';
 
-import * as gitWebhook from "../server.js";
+import * as gitWebhook from "../git/server.js";
 
 // Start your app
 (async () => {
-  await app.start(process.env.PORT || 3000);
+  await app.start();
   console.log('⚡️ Bolt app is running!');
 })();

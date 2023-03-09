@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 # コミット状況を取得する
 git fetch origin glitch

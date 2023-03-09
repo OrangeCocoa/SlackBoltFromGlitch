@@ -57,10 +57,10 @@ app.action(/btn_[yes|no]/, async ({ body, ack, say }) => {
   const reaction = val === "yes" ? "thumbsup_all" : "sadblob";
 
   // スタンプをつける
-  await app.client.reactions.add({
+  /*await app.client.reactions.add({
     token: process.env.SLACK_BOT_TOKEN,
     channel: body.channel,
     timestamp: body.ts,
     name: reaction,
-  });
+  });*/
 });

@@ -35,6 +35,6 @@ const onWebhook = (req, res) => {
 app.post('/git', onWebhook);
 
 // listen for requests
-const listener = app.listen(2868, function() {
+const listener = app.listen(3000, function() {
   console.log('Start listening on port ' + listener.address().port);
 });

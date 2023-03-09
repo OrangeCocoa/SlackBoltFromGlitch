@@ -11,6 +11,8 @@ app.use(bodyParser.json());
 const onWebhook = (req, res) => {
   let hmac = crypto.SHA1(process.env.GIT_SECRET);
   let sig  = `sha1=${hmac.update(JSON.stringify(req.body)).digest('hex')}`;
+  console.log(sig);
+  console.log(req.headers['x-hub-signature']);
 
   if (req.headers['x-github-event'] === 'push' && sig === req.headers['x-hub-signature']) {
     cmd.run('chmod 777 ./git.sh'); 
